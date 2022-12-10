@@ -32,5 +32,12 @@ namespace VendorAndOrderTracker.Controllers
       Vendor foundVendor = Vendor.Find(id);
       return View(foundVendor);
     }
+
+    [HttpPost("/vendors/{id}")]
+    public ActionResult Create(string title, string description, double price, double date)
+    {
+      Order newOrder = new Order(title, description, price, date);
+      return RedirectToAction("Show");
+    }
   }
 }

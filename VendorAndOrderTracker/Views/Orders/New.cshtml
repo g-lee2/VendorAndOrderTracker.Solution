@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vendor and Order Tracker</title>
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+      crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Add a new order</h1>
+    <p>Add a order here:</p>
+
+    <form action="/vendors/{id}" method="post">
+      <label for="title">Order title:</label>
+      <input id="title" name="title" type="text">
+      <label for="description">Description/Order Details</label>
+      <input id="description" name="description" type="text">
+      <label for="price">Order Total:</label>
+      <input id="price" name="price" type="number" step=".01">
+      <label for="date">Order Date:</label>
+      <input id="date" name="date" type="number" step=".01">
+      <button type="submit">Add</button>
+    </form>
+
+    <p><a href="/">Back home</a></p>
+    <p><a href="/vendors">Back to vendors</a></p>
+  </body>
+</html>
