@@ -39,5 +39,16 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(updatedTitle, result);
     }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "description";
+
+      Order newOrder = new Order("title", description, 0.00, 4.11);
+      string result = newOrder.Description;
+
+      Assert.AreEqual(description, result);
+    }
   }
 }
