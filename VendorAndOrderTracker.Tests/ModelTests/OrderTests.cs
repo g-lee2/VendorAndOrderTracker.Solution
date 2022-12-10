@@ -123,11 +123,34 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void GetId_ReturnsOrderId_Int()
     {
-      Order newOrder = new Order("title", "description", 0.10, 4.11);
+      string title = "title1";
+      string description = "description1";
+      double price = 0.10;
+      double date = 10.11;
+      Order newOrder = new Order(title, description, price, date);
 
       int result = newOrder.Id;
 
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Category()
+    {
+      string title01 = "title1";
+      string description01 = "description1";
+      double price01 = 0.10;
+      double date01 = 10.11;
+      string title02 = "title2";
+      string description02 = "description2";
+      double price02 = 4.10;
+      double date02 = 4.11;
+      Order newOrder = new Order(title01, description01, price01, date01);
+      Order newOrder2 = new Order(title02, description02, price02, date02);
+
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(newOrder2, result);
     }
   }
 }
