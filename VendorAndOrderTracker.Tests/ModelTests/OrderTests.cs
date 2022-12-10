@@ -152,6 +152,27 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(newOrder2, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllOrderObjects_OrderList()
+    {
+      string title01 = "title1";
+      string description01 = "description1";
+      double price01 = 0.10;
+      double date01 = 10.11;
+      string title02 = "title2";
+      string description02 = "description2";
+      double price02 = 4.10;
+      double date02 = 4.11;
+      Order newOrder = new Order(title01, description01, price01, date01);
+      Order newOrder2 = new Order(title02, description02, price02, date02);
+
+      List<Order> newList = new List<Order> { newOrder, newOrder2 };
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
 
