@@ -100,5 +100,19 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void SetDate_SetDate_Double()
+    {
+      double date = 3.01;
+      Order newOrder = new Order("title", "description", 0.10, date);
+
+      
+      double updatedDate = 5.10;
+      newOrder.Date = updatedDate;
+      double result = newOrder.Date;
+
+      Assert.AreEqual(updatedDate, result);
+    }
   }
 }
