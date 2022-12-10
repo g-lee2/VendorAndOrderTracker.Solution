@@ -81,5 +81,20 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string vendorName01 = "Pastry Shop";
+      string vendorName02 = "London Pastry";
+      string description01 = "Sells asian pastry";
+      string description02 = "Sells English scones and pastry";
+      Vendor newVendor1 = new Vendor(vendorName01, description01);
+      Vendor newVendor2 = new Vendor(vendorName02, description02);
+
+      Vendor result = Vendor.Find(2);
+
+      Assert.AreEqual(newVendor2, result);
+    }
   }
 }
