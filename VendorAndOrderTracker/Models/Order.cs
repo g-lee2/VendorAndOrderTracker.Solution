@@ -9,6 +9,8 @@ namespace VendorAndOrderTracker.Models
     public double Price { get; set; }
     public double Date { get; set; }
     public int Id { get; }
+
+    private static List<Order> _instances = new List<Order> {};
     
     public Order(string title, string description, double price, double date)
     {
@@ -16,6 +18,18 @@ namespace VendorAndOrderTracker.Models
       Description = description;
       Price = price;
       Date = date;
+      _instances.Add(this);
+      Id = _instances.Count;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
     }
   }
 }
