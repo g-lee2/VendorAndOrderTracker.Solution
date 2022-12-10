@@ -11,5 +11,10 @@ namespace VendorAndOrderTracker.Controllers
       Vendor starterVendor = new Vendor("London Pastry", "New Pastry Vendor");
       return View(starterVendor);
     }
+    [HttpGet("/vendor/new")]
+    public ActionResult CreateForm()
+    {
+      return View();
+    }
   }
 }
