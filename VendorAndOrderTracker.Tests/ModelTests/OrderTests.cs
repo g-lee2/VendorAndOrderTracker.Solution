@@ -64,5 +64,16 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(updatedDescription, result);
     }
+
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_Double()
+    {
+      double price = 400.01;
+
+      Order newOrder = new Order("title", "description", price, 4.11);
+      double result = newOrder.Price;
+
+      Assert.AreEqual(price, result);
+    }
   }
 }
