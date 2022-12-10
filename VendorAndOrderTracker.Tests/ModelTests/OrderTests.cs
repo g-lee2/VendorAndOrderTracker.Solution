@@ -6,8 +6,13 @@ using System;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -113,6 +118,16 @@ namespace VendorAndOrderTracker.Tests
       double result = newOrder.Date;
 
       Assert.AreEqual(updatedDate, result);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+      Order newOrder = new Order("title", "description", 0.10, 4.11);
+
+      int result = newOrder.Id;
+
+      Assert.AreEqual(1, result);
     }
   }
 }
