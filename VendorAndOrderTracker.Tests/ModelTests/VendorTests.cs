@@ -6,8 +6,13 @@ using System;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -63,6 +68,18 @@ namespace VendorAndOrderTracker.Tests
       string result = newVendor.Description;
 
       Assert.AreEqual(updatedDescription, result);
+    }
+
+    [TestMethod]
+    public void GetId_VendorsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      string vendorName = "Pastry Shop";
+      string description = "Sells asian pastry";
+      Vendor newVendor = new Vendor(vendorName, description);
+
+      int result = newVendor.Id;
+
+      Assert.AreEqual(1, result);
     }
   }
 }
