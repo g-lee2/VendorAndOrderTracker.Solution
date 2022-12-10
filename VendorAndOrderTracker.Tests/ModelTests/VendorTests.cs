@@ -96,5 +96,21 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(newVendor2, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      string vendorName01 = "Pastry Shop";
+      string vendorName02 = "London Pastry";
+      string description01 = "Sells asian pastry";
+      string description02 = "Sells English scones and pastry";
+      Vendor newVendor1 = new Vendor(vendorName01, description01);
+      Vendor newVendor2 = new Vendor(vendorName02, description02);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+
+      List<Vendor> result = Vendor.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
