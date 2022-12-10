@@ -50,5 +50,19 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string description = "London Pastry sells british and french pastry";
+      Vendor newVendor = new Vendor("London Pastry", description);
+
+      
+      string updatedDescription = "London Pastry sells scones";
+      newVendor.Description = updatedDescription;
+      string result = newVendor.Description;
+
+      Assert.AreEqual(updatedDescription, result);
+    }
   }
 }
