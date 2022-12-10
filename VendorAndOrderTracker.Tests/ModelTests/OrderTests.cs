@@ -75,5 +75,19 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(price, result);
     }
+
+    [TestMethod]
+    public void SetPrice_SetPrice_Double()
+    {
+      double price = 400.01;
+      Order newOrder = new Order("title", "description", price, 4.11);
+
+      
+      double updatedPrice = 350.10;
+      newOrder.Price = updatedPrice;
+      double result = newOrder.Price;
+
+      Assert.AreEqual(updatedPrice, result);
+    }
   }
 }
