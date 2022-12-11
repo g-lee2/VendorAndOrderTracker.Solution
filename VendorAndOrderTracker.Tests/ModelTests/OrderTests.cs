@@ -194,6 +194,17 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(day, result);
     }
+
+    [TestMethod]
+    public void GetYear_ReturnsYear_Int()
+    {
+      int year = 4;
+
+      Order newOrder = new Order("title", "description", 0.10, 4, 22, year);
+      int result = newOrder.Year;
+
+      Assert.AreEqual(year, result);
+    }
   }
 }
 
