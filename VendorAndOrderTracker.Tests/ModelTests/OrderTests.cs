@@ -205,5 +205,19 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(year, result);
     }
+
+    [TestMethod]
+    public void SetDay_SetDay_Int()
+    {
+      int day = 3;
+      Order newOrder = new Order("title", "description", 0.10, 3, day, 2000);
+
+      
+      int updatedDay = 2;
+      newOrder.Day = updatedDay;
+      int result = newOrder.Day;
+
+      Assert.AreEqual(updatedDay, result);
+    }
   }
 }
