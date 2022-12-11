@@ -183,6 +183,17 @@ namespace VendorAndOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetDay_ReturnsDay_Int()
+    {
+      int day = 4;
+
+      Order newOrder = new Order("title", "description", 0.10, 4, day, 2000);
+      int result = newOrder.Day;
+
+      Assert.AreEqual(day, result);
+    }
   }
 }
 
