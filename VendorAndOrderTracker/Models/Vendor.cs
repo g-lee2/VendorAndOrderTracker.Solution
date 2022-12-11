@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using VendorAndOrderTracker.Models;
 
 namespace VendorAndOrderTracker.Models
 {

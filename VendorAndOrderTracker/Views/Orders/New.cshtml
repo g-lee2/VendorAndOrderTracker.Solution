@@ -10,10 +10,9 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <h1>Add a new order</h1>
-    <p>Add a order here:</p>
+    <h1>Add a new order to @Model.VendorName</h1>
 
-    <form action="/vendors/{id}" method="post">
+    <form action="/vendors/@Model.Id}/orders" method="post">
       <label for="title">Order title:</label>
       <input id="title" name="title" type="text">
       <label for="description">Description/Order Details</label>
