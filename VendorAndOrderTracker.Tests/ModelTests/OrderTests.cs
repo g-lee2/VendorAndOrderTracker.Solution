@@ -16,7 +16,7 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title", "description", 0.00, 4.11);
+      Order newOrder = new Order("title", "description", 0.00, 4, 30, 2000);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -25,7 +25,7 @@ namespace VendorAndOrderTracker.Tests
     {
       string title = "LP Order";
 
-      Order newOrder = new Order(title, "description", 0.00, 4.11);
+      Order newOrder = new Order(title, "description", 0.00, 4, 30, 2000);
       string result = newOrder.Title;
 
       Assert.AreEqual(title, result);
@@ -35,7 +35,7 @@ namespace VendorAndOrderTracker.Tests
     public void SetTitle_SetTitle_String()
     {
       string title = "title";
-      Order newOrder = new Order(title, "description", 0.00, 4.11);
+      Order newOrder = new Order(title, "description", 0.00, 4, 30, 2000);
 
       
       string updatedTitle = "New title";
@@ -50,7 +50,7 @@ namespace VendorAndOrderTracker.Tests
     {
       string description = "description";
 
-      Order newOrder = new Order("title", description, 0.00, 4.11);
+      Order newOrder = new Order("title", description, 0.00, 4, 30, 2000);
       string result = newOrder.Description;
 
       Assert.AreEqual(description, result);
@@ -60,7 +60,7 @@ namespace VendorAndOrderTracker.Tests
     public void SetDescription_SetDescription_String()
     {
       string title = "title";
-      Order newOrder = new Order(title, "description", 0.00, 4.11);
+      Order newOrder = new Order(title, "description", 0.00, 4, 30, 2000);
 
       
       string updatedDescription = "New Description";
@@ -75,7 +75,7 @@ namespace VendorAndOrderTracker.Tests
     {
       double price = 400.01;
 
-      Order newOrder = new Order("title", "description", price, 4.11);
+      Order newOrder = new Order("title", "description", price, 4, 30, 2000);
       double result = newOrder.Price;
 
       Assert.AreEqual(price, result);
@@ -85,7 +85,7 @@ namespace VendorAndOrderTracker.Tests
     public void SetPrice_SetPrice_Double()
     {
       double price = 400.01;
-      Order newOrder = new Order("title", "description", price, 4.11);
+      Order newOrder = new Order("title", "description", price, 4, 30, 2000);
 
       
       double updatedPrice = 350.10;
@@ -96,28 +96,28 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetDate_ReturnsDate_Double()
+    public void GetDate_ReturnsMonth_Int()
     {
-      double date = 4.11;
+      int month = 4;
 
-      Order newOrder = new Order("title", "description", 0.10, date);
-      double result = newOrder.Date;
+      Order newOrder = new Order("title", "description", 0.10, month, 31, 2000);
+      int result = newOrder.Month;
 
-      Assert.AreEqual(date, result);
+      Assert.AreEqual(month, result);
     }
 
     [TestMethod]
-    public void SetDate_SetDate_Double()
+    public void SetDate_SetDate_Int()
     {
-      double date = 3.01;
-      Order newOrder = new Order("title", "description", 0.10, date);
+      int month = 3;
+      Order newOrder = new Order("title", "description", 0.10, month, 31, 2000);
 
       
-      double updatedDate = 5.10;
-      newOrder.Date = updatedDate;
-      double result = newOrder.Date;
+      int updatedMonth = 5;
+      newOrder.Month = updatedMonth;
+      int result = newOrder.Month;
 
-      Assert.AreEqual(updatedDate, result);
+      Assert.AreEqual(updatedMonth, result);
     }
 
     [TestMethod]
@@ -126,8 +126,10 @@ namespace VendorAndOrderTracker.Tests
       string title = "title1";
       string description = "description1";
       double price = 0.10;
-      double date = 10.11;
-      Order newOrder = new Order(title, description, price, date);
+      int month = 10;
+      int day = 22;
+      int year = 2022;
+      Order newOrder = new Order(title, description, price, month, day, year);
 
       int result = newOrder.Id;
 
@@ -140,13 +142,17 @@ namespace VendorAndOrderTracker.Tests
       string title01 = "title1";
       string description01 = "description1";
       double price01 = 0.10;
-      double date01 = 10.11;
+      int month01 = 10;
+      int day01 = 31;
+      int year01 = 2000;
       string title02 = "title2";
       string description02 = "description2";
       double price02 = 4.10;
-      double date02 = 4.11;
-      Order newOrder = new Order(title01, description01, price01, date01);
-      Order newOrder2 = new Order(title02, description02, price02, date02);
+      int month02 = 4;
+      int day02 = 31;
+      int year02 = 2000;
+      Order newOrder = new Order(title01, description01, price01, month01, day01, year01);
+      Order newOrder2 = new Order(title02, description02, price02, month02, day02, year02);
 
       Order result = Order.Find(2);
 
@@ -159,13 +165,17 @@ namespace VendorAndOrderTracker.Tests
       string title01 = "title1";
       string description01 = "description1";
       double price01 = 0.10;
-      double date01 = 10.11;
+      int month01 = 10;
+      int day01 = 31;
+      int year01 = 2000;
       string title02 = "title2";
       string description02 = "description2";
       double price02 = 4.10;
-      double date02 = 4.11;
-      Order newOrder = new Order(title01, description01, price01, date01);
-      Order newOrder2 = new Order(title02, description02, price02, date02);
+      int month02 = 4;
+      int day02 = 31;
+      int year02 = 2000;
+      Order newOrder = new Order(title01, description01, price01, month01, day01, year01);
+      Order newOrder2 = new Order(title02, description02, price02, month02, day02, year02);
 
       List<Order> newList = new List<Order> { newOrder, newOrder2 };
 

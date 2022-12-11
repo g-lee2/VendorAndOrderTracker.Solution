@@ -119,8 +119,10 @@ namespace VendorAndOrderTracker.Tests
       string title01 = "title1";
       string description01 = "description1";
       double price01 = 0.10;
-      double date01 = 10.11;
-      Order newOrder = new Order(title01, description01, price01, date01);
+      int month01 = 10;
+      int day01 = 10;
+      int year01 = 10;
+      Order newOrder = new Order(title01, description01, price01, month01, day01, year01);
       List<Order> newList = new List<Order> { newOrder };
       string vendorName = "Pastry Shop";
       string description = "Sells asian pastry";

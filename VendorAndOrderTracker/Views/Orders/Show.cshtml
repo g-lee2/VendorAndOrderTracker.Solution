@@ -3,7 +3,7 @@
 <h2>Title: @Model["order"].Title</h2>
 <h2>Description: @Model["order"].Description</h2>
 <h2>Price: $@Model["order"].Price</h2>
-<h2>Date: @Model["order"].Date</h2>
+<h2>Date: @Model["order"].Month-@Model["order"].Day-@Model["order"].Year;</h2>
 <h2>Vendor: @Model["vendor"].VendorName</h2>
 
 <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
