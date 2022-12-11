@@ -96,7 +96,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetDate_ReturnsMonth_Int()
+    public void GetMonth_ReturnsMonth_Int()
     {
       int month = 4;
 
@@ -107,7 +107,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void SetDate_SetDate_Int()
+    public void SetMonth_SetMonth_Int()
     {
       int month = 3;
       Order newOrder = new Order("title", "description", 0.10, month, 31, 2000);
